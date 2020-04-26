@@ -29,3 +29,16 @@ dc-EN-0002,2020-04-12T17:00:00,dati-regioni,ITA,04,P.A. Bolzano,,,,data correcti
 dc-EN-0003,2020-04-12T17:00:00,dati-andamento-nazionale,ITA,04,P.A. Bolzano,,,,data correction,recalculation of informations,recalculation of recovered (-110 compared to yesterday)
 dc-EN-0004,2020-04-15T17:00:00,dati-regioni,ITA,06,Friuli Venezia Giulia,,,,data correction,recalculation of informations,recalculation of home isolation and recovered
 dc-EN-0005,2020-04-15T17:00:00,dati-andamento-nazionale,ITA,06,Friuli Venezia Giulia,,,,data correction,recalculation of informations,recalculation of home isolation and recovered
+dc-EN-0006,2020-04-20T17:00:00,dati-regioni,ITA,03,Lombardia,,,,data correction,recalculation of informations,recalculation of tested cases (duplicates removed)
+dc-EN-0007,2020-04-20T17:00:00,dati-andamento-nazionale,ITA,03,Lombardia,,,,data correction,recalculation of informations,recalculation of tested cases (duplicates removed)
+pd-EN-0012,2020-04-21T17:00:00,dati-regioni,ITA,03,Lombardia,,,,partial data,partial communication of data,tested cases not updated
+pd-EN-0013,2020-04-21T17:00:00,dati-andamento-nazionale,ITA,03,Lombardia,,,,partial data,partial communication of data,tested cases not updated
+pd-EN-0014,2020-04-21T17:00:00,dati-regioni,ITA,15,Campania,,,,partial data,partial communication of data,tested cases not updated
+pd-EN-0015,2020-04-21T17:00:00,dati-andamento-nazionale,ITA,15,Campania,,,,partial data,partial communication of data,tested cases not updated
+dc-IT-0008,2020-04-24T17:00:00,dati-regioni,ITA,06,Friuli Venezia Giulia,,,,data correction,information analysis, information analysis (recovered under revision)
+dc-IT-0009,2020-04-24T17:00:00,dati-andamento-nazionale,ITA,06,Friuli Venezia Giulia,,,,data correction,information analysis, information analysis (recovered under revision)
+dc-IT-0010,2020-04-24T17:00:00,dati-regioni,ITA,20,Sardegna,,,,correzione dati,ricalcolo delle informazioni,ricalcolo casi testati (1.237 tamponi aggiunti)
+dc-IT-0011,2020-04-24T17:00:00,dati-andamento-nazionale,ITA,20,Sardegna,,,,data correction,recalculation of informations,recalculation of tests (1.237 tests added)
+dc-IT-0012,2020-04-26T17:00:00,dati-regioni,ITA,02,Valle d'Aosta,,,,data correction,recalculation of informations,recalculation of tested cases
+dc-IT-0013,2020-04-26T17:00:00,dati-andamento-nazionale,ITA,02,Valle d'Aosta,,,,data correction,recalculation of informations,recalculation of tested cases
+
