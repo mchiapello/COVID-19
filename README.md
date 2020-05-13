@@ -1,10 +1,17 @@
 <img src="http://opendatadpc.maps.arcgis.com/sharing/rest/content/items/5c8ef7516b5b4bb19f61037b4cd69015/data" alt="COVID-19" data-canonical-src="http://opendatadpc.maps.arcgis.com/sharing/rest/content/items/5c8ef7516b5b4bb19f61037b4cd69015/data" width="400" />
 
+[Italiano](README.md) - [English](README_EN.md)<br><br>
+
 # Dati COVID-19 Italia
 
 [![GitHub license](https://img.shields.io/badge/License-Creative%20Commons%20Attribution%204.0%20International-blue)](https://github.com/pcm-dpc/COVID-19/blob/master/LICENSE)
 [![GitHub commit](https://img.shields.io/github/last-commit/pcm-dpc/COVID-19)](https://github.com/pcm-dpc/COVID-19/commits/master)
  
+<<<<<<< HEAD
+=======
+## Avviso modifiche 
+[https://github.com/pcm-dpc/COVID-19/issues/625](https://github.com/pcm-dpc/COVID-19/issues/625)<br><br>
+>>>>>>> c986b32ec52c99a6105af6224b4d5ead6d94c71e
 
 [Sito del Dipartimento della Protezione Civile - Emergenza Coronavirus: la risposta nazionale](http://www.protezionecivile.it/attivita-rischi/rischio-sanitario/emergenze/coronavirus)
 

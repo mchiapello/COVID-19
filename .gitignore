@@ -19,5 +19,8 @@ Thumbs.db
 
 # Changelog test
 changelog.txt
+<<<<<<< HEAD
 
 ITA_adm/
+=======
+>>>>>>> c986b32ec52c99a6105af6224b4d5ead6d94c71e
