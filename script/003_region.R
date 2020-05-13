@@ -4,11 +4,12 @@ library(lubridate)
 library(sf)
 library(gganimate) #Used for animations
 library(RColorBrewer) #Used for color scale 
+library(ggrepel)
 
 setwd(here())
 
 # Read data
-covid19_data <- read_csv("dati-province/dpc-covid19-ita-province.csv")  %>%
+covid19_data <- read_csv("dati-province/dpc-covid19-ita-province.csv") %>%
     select(data, DP = denominazione_provincia, totale_casi, lat, long) %>%
     mutate(data = ymd_hms(data))
 
@@ -17,12 +18,13 @@ co <- covid19_data %>%
     filter(DP != "In fase di definizione/aggiornamento")
 
 # https://www.diva-gis.org/datadown
-it <- st_read("ITA_adm/")
+pr <- st_read("ITA_adm/provincie/")
 
 # Join
 sp <- co %>%
-    left_join(it, by = c("DP" = "NAME_2")) %>%
-    select(data:totale_casi, geometry)
+    left_join(pr, by = c("DP" = "NAME_2")) %>%
+    select(data:totale_casi,NAME_1,  geometry) %>%
+    filter(NAME_1 %in% c("Piemonte", "Lombardia"))
 
 sp <- st_as_sf(sp) %>%
     mutate(data = as.character(data), 
@@ -32,9 +34,10 @@ sp <- st_as_sf(sp) %>%
 ################################################################################
 # Plot
 # Makes plot with ggplot2 and gganimate to animate through the days 
-sp_map<-ggplot()+
-  geom_sf(data = it,fill = "white")+
-  geom_sf(data = sp %>% filter(data == "2020-04-12"),aes(fill=totale_casi))+
+sp_map<-sp %>%
+    ggplot(aes(label = NAME_1))+
+#   geom_sf(data = it,fill = "white")+
+  geom_sf(aes(fill=totale_casi))+
   ggtitle("Spread of Covid19 Throughout Italy")+
   xlab("")+
   ylab("")+
@@ -64,4 +67,23 @@ sp_map<-ggplot()+
 #   animate(sp_map, nframe=25,fps = 2, end_pause = 15,height = 500, width =500)
   animate(sp_map)
 
+################################################################################
+library(ggthemes)
+library(ggsci)
+a <- read_csv("dati-regioni/dpc-covid19-ita-regioni.csv") %>%
+    rename(DP = denominazione_regione)
 
+# Piemonte
+a %>%
+    filter(DP == "Piemonte") %>%
+    select(data, DP, ricoverati_con_sintomi:casi_testati) %>%
+    pivot_longer(cols = ricoverati_con_sintomi:casi_testati,
+                 names_to = "feature",
+                 values_to = "num") %>%
+    filter(feature %in% c("dimessi_guariti", "deceduti")) %>%
+    ggplot(aes(x = as.Date(data), y = num, color = feature)) +
+    geom_point() +
+    geom_line() +
+    theme_fivethirtyeight() +
+    scale_colour_uchicago() +
+    geom_vline(xintercept = .1)
